@@ -1,0 +1,9 @@
+button:focus {
+    outline: 1px solid transparent;
+}
+
+.image-responsive {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
