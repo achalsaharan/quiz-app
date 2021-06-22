@@ -1,10 +1,4 @@
 import { useNavigate } from 'react-router';
-import { getJSDocTags } from 'typescript';
-import {
-    useQuizzesData,
-    QuizzContextType,
-} from '../../contexts/QuizzesContext';
-
 import { Quiz } from '../../data/quiz.types';
 
 export function QuizzCard({ quiz }: { quiz: Quiz }) {
@@ -32,27 +26,16 @@ export function QuizzCard({ quiz }: { quiz: Quiz }) {
                     Difficulty: {quiz.difficulty}/10
                 </h2>
                 <div className="mt-2 flex space-x-2">
-                    {quiz.tags?.map((tag) => (
-                        <span className="bg-blue-200 px-2 rounded  font-light text-sm">
+                    {quiz.tags?.map((tag, idx) => (
+                        <span
+                            key={idx}
+                            className="bg-blue-200 px-2 rounded  font-light text-sm"
+                        >
                             {tag}
                         </span>
                     ))}
                 </div>
             </div>
         </div>
-    );
-}
-
-export function QuizzesPage() {
-    const { quizzes } = useQuizzesData();
-    return (
-        <>
-            <h1 className="mb-4 font-semibold">Start Quizzing</h1>
-            <div className="grid gap-10 grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 items-stretch">
-                {quizzes.map((quiz) => (
-                    <QuizzCard key={quiz._id} quiz={quiz} />
-                ))}
-            </div>
-        </>
     );
 }

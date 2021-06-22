@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function Header() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const navigate = useNavigate();
     return (
         <>
             <div className="bg-blue-100 fixed w-screen top-0 left-0 z-0">

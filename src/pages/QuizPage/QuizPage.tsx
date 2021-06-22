@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { PlayQuizProvider } from '../../contexts/PlayQuizContext';
 import { usePlayQuiz } from '../../contexts/PlayQuizContext/PlayQuizContext';
-import { useQuizzesData } from '../../contexts/QuizzesContext';
+import { useQuizzesData } from '../../contexts/QuizzesContext/QuizzesContext';
 import { LoadingAnimation } from '../../components/LoadingAnimation';
 import { InstructionsPage } from './InstructionsPage';
 import { PlayQuizPage } from './PlayQuizPage';

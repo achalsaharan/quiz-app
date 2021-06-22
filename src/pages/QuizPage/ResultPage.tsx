@@ -1,6 +1,6 @@
 import { usePlayQuiz } from '../../contexts/PlayQuizContext/PlayQuizContext';
 import { Option, Question } from '../../data/quiz.types';
-import { Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function QuestionResultCard({
     question,

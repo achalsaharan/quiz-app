@@ -1,12 +1,10 @@
 import './App.css';
 
 import { Header } from './components/Header';
-import { Timer } from './components/Timer';
-import { QuizzesPage } from './pages/QuizzesPage';
+import { QuizzesListingPage } from './pages/QuizzesListingPage';
 
-import { Routes, Route, Navigate, Router } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { QuizPage } from './pages/QuizPage';
-import { PlayQuizProvider } from './contexts/PlayQuizContext';
 
 function App() {
     return (
@@ -19,7 +17,7 @@ function App() {
                 style={{ maxWidth: '1500px' }}
             >
                 <Routes>
-                    <Route path="/" element={<QuizzesPage />} />
+                    <Route path="/" element={<QuizzesListingPage />} />
 
                     <Route path="/quizzes/:quizId" element={<QuizPage />} />
                 </Routes>

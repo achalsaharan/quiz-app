@@ -5,8 +5,8 @@ import {
     useEffect,
     useState,
 } from 'react';
-import { Quiz } from '../data/quiz.types';
-import { quizzes, quiz2 } from '../data/quiz';
+import { Quiz } from '../../data/quiz.types';
+import { quizzes } from '../../data/quiz';
 
 export type QuizzContextType = {
     quizzes: Quiz[];

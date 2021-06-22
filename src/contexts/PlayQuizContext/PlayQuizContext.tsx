@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useContext, useReducer } from 'react';
-import { quizzes } from '../../data/quiz';
 
-import { Quiz, Question, Option } from '../../data/quiz.types';
+import { Quiz } from '../../data/quiz.types';
 import { ActionType, reducer } from './playQuiz.reducer';
 
 export type StateType = {

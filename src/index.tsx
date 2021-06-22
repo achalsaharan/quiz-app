@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
-import { QuizzesDataProvider } from './contexts/QuizzesContext';
+import { QuizzesDataProvider } from './contexts/QuizzesContext/QuizzesContext';
 import { PlayQuizProvider } from './contexts/PlayQuizContext/PlayQuizContext';
 
 ReactDOM.render(
