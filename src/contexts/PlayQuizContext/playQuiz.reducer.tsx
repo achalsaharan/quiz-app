@@ -4,6 +4,7 @@ import { StateType } from './PlayQuizContext';
 export type ActionType =
     | { type: 'NEXT_STAGE' }
     | { type: 'LOAD_QUIZ'; payload: Quiz }
+    | { type: 'RESET_STAGE' }
     | { type: 'SET_OPTION'; payload: Question };
 
 export function reducer(state: StateType, action: ActionType): StateType {
@@ -22,6 +23,13 @@ export function reducer(state: StateType, action: ActionType): StateType {
                 return { ...state, stage: 'result' };
             }
             return { ...state };
+        }
+
+        case 'RESET_STAGE': {
+            return {
+                ...state,
+                stage: 'instructions',
+            };
         }
 
         //action.payload will contain the whole question object

@@ -1,5 +1,6 @@
 import { usePlayQuiz } from '../../contexts/PlayQuizContext/PlayQuizContext';
 import { Option, Question } from '../../data/quiz.types';
+import { Timer } from '../../components/Timer';
 
 function QuestionCard({
     question,
@@ -83,6 +84,7 @@ export function PlayQuizPage() {
 
     return (
         <div className="flex flex-col max-w-lg mx-auto">
+            <Timer seconds={1} />
             {quiz.questions.map((question, idx) => (
                 <QuestionCard key={idx} question={question} questionNo={idx} />
             ))}

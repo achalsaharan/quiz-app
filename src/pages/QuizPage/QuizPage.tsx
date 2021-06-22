@@ -36,14 +36,15 @@ export function QuizPage() {
     return (
         <div>
             {loading && <LoadingAnimation />}
-            {state.quiz ? (
+
+            {/* {state.quiz ? (
                 <button
                     className="bg-green-200"
                     onClick={() => dispatch({ type: 'NEXT_STAGE' })}
                 >
                     next stage
                 </button>
-            ) : null}
+            ) : null} */}
             <h1 className="text-xl font-semibold text-center mb-4 text-gray-800">
                 {quiz?.name}
             </h1>

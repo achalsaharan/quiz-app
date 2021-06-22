@@ -1,6 +1,7 @@
 import './App.css';
 
 import { Header } from './components/Header';
+import { Timer } from './components/Timer';
 import { QuizzesPage } from './pages/QuizzesPage';
 
 import { Routes, Route, Navigate, Router } from 'react-router-dom';

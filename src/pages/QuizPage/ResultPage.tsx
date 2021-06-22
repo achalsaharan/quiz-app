@@ -1,5 +1,6 @@
 import { usePlayQuiz } from '../../contexts/PlayQuizContext/PlayQuizContext';
 import { Option, Question } from '../../data/quiz.types';
+import { Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
 
 function QuestionResultCard({
     question,
@@ -50,7 +51,10 @@ function QuestionResultCard({
 export function ResultPage() {
     const {
         state: { quiz },
+        dispatch,
     } = usePlayQuiz();
+
+    const navigate = useNavigate();
 
     function questionPoints(question: Question) {
         let questionScore = 0;
@@ -77,17 +81,33 @@ export function ResultPage() {
         return score;
     }
 
+    function tryOtherQuizzes() {
+        dispatch({ type: 'RESET_STAGE' });
+        navigate('/');
+    }
+
     if (quiz === undefined) {
         return <h1>quiz not defined</h1>;
     }
 
     return (
-        <div className="flex flex-col max-w-lg mx-auto">
-            <h1>Quiz Results</h1>
-            <h2>Score = {getScore()}</h2>
+        <div className="flex flex-col max-w-lg mx-auto border-1">
+            <h2 className="font-semibold">You Scored {getScore()} Points!</h2>
+            <Link to="/">
+                <a className="italic underline text-blue-600">
+                    Try other quizzes
+                </a>
+            </Link>
             {quiz.questions.map((question, idx) => (
                 <QuestionResultCard question={question} questionNo={idx} />
             ))}
+
+            <a
+                className="italic underline text-blue-600"
+                onClick={tryOtherQuizzes}
+            >
+                Try other quizzes
+            </a>
         </div>
     );
 }

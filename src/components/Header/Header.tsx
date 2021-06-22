@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export function Header() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -11,15 +11,17 @@ export function Header() {
                     className="mx-auto py-4 px-2 text-blue-600 flex items-center"
                     style={{ maxWidth: '1500px' }}
                 >
-                    <button
+                    {/* <button
                         className="mr-4 md:hidden hover:text-blue-800"
                         onClick={() => setSidebarOpen(true)}
                     >
                         <i className="fas fa-bars fa-lg "></i>
-                    </button>
-                    <h1 className="text-lg font-bold">Quizzastrics</h1>
+                    </button> */}
+                    <Link to={'/'}>
+                        <h1 className="text-lg font-bold">Quizzastrics</h1>
+                    </Link>
                     <div className="flex space-x-4 ml-auto">
-                        <button
+                        {/* <button
                             className="hover:text-blue-800"
                             // onClick={() => navigate('/login')}
                         >
@@ -30,7 +32,7 @@ export function Header() {
                             // onClick={() => navigate('/signup')}
                         >
                             Register
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
