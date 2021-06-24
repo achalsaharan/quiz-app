@@ -6,7 +6,6 @@ import { ActionType, reducer } from './playQuiz.reducer';
 export type StateType = {
     stage: 'instructions' | 'play' | 'result';
     quiz: Quiz | undefined;
-    currentQuestion: number;
 };
 
 export type PlayQuizContextType = {
@@ -21,7 +20,6 @@ export const PlayQuizContext = createContext<PlayQuizContextType>(
 export const initalState: StateType = {
     stage: 'instructions',
     quiz: undefined,
-    currentQuestion: 1,
 };
 
 export function PlayQuizProvider({ children }: { children: ReactNode }) {

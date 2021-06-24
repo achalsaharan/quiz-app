@@ -12,6 +12,7 @@ export function reducer(state: StateType, action: ActionType): StateType {
         case 'LOAD_QUIZ': {
             return {
                 ...state,
+                stage: 'instructions',
                 quiz: action.payload,
             };
         }
